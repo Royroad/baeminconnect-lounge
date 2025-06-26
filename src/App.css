@@ -116,3 +116,29 @@ main p, .accordion-body {
   background-color: #555555; /* 짙은 회색으로 변경 */
   border-radius: 50% 20% 30% 70% / 60% 40% 60% 40%;
 }
+
+.facility-item {
+  padding: 2rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 15px;
+  background-color: #fafafa;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+.facility-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.facility-icon {
+  color: #2AC1BC; /* Mint color */
+  margin-bottom: 1rem;
+}
+
+.facility-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import Gallery from './components/Gallery';
 import logo from './images/logo_basic.png';
+import { FaWifi, FaBatteryFull, FaCoffee } from 'react-icons/fa';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -53,15 +54,18 @@ function App() {
 
         <section id="facilities" className="py-5 mb-5">
           <h2 className="text-center mb-4 section-title">편의 시설</h2>
-          <div className="row">
-            <div className="col-md-4 text-center">
-              <p>Wi-Fi</p>
+          <div className="row text-center">
+            <div className="col-md-4 facility-item">
+              <FaWifi size={40} className="facility-icon" />
+              <p className="facility-text">Wi-Fi</p>
             </div>
-            <div className="col-md-4 text-center">
-              <p>휴대폰 충전</p>
+            <div className="col-md-4 facility-item">
+              <FaBatteryFull size={40} className="facility-icon" />
+              <p className="facility-text">휴대폰 충전</p>
             </div>
-            <div className="col-md-4 text-center">
-              <p>음료/간식</p>
+            <div className="col-md-4 facility-item">
+              <FaCoffee size={40} className="facility-icon" />
+              <p className="facility-text">음료/간식</p>
             </div>
           </div>
         </section>
