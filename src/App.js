@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <header className="bg-mint text-center py-5">
         <div className="d-flex flex-column align-items-center justify-content-center mb-3 logo-container">
-          <img src={logo} alt="배민 라이더 라운지 로고" className="header-logo" />
+          <img src={logo} alt="배민커넥트 라운지 로고" className="header-logo" />
           <span className="lounge-text">라운지</span>
         </div>
         <p className="header-slogan">라이더님들을 위한 편안한 휴식 공간</p>
@@ -47,7 +47,7 @@ function App() {
         <section id="about" className="py-5 mb-5">
           <h2 className="text-center mb-4 section-title">라운지 소개</h2>
           <p>
-            배민 라이더 라운지는 라이더님들이 언제든지 편하게 쉬어가실 수 있도록 마련된 공간입니다.
+            배민커넥트 라운지는 라이더님들이 언제든지 편하게 쉬어가실 수 있도록 마련된 공간입니다.
             아늑한 휴식 공간에서 재충전의 시간을 갖고, 동료 라이더들과 교류하며 정보를 나눠보세요.
           </p>
         </section>
@@ -97,7 +97,7 @@ function App() {
               </h2>
               <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                 <div className="accordion-body">
-                  네, 배민 라이더님이라면 누구나 무료로 이용 가능합니다.
+                  네, 배민커넥트 라이더님이라면 누구나 무료로 이용 가능합니다.
                 </div>
               </div>
             </div>
