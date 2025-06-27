@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import Gallery from './components/Gallery';
 import logo from './images/logo_basic.png';
-import { FaWifi, FaBatteryFull, FaCoffee } from 'react-icons/fa';
+import { FaWifi, FaBatteryFull, FaCoffee, FaMapMarkedAlt } from 'react-icons/fa';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -74,6 +74,13 @@ function App() {
           <h2 className="text-center mb-4 section-title">위치 및 운영시간</h2>
           <p><strong>주소:</strong> 서울 송파구 백제고분로 364 대신빌딩 3층 (배민아카데미)</p>
           <p><strong>운영시간:</strong> 매일 10:00 ~ 17:00</p>
+
+          <div className="text-center mt-4">
+            <a href="https://naver.me/xucXyVyE" target="_blank" rel="noopener noreferrer" className="map-link-btn">
+              <FaMapMarkedAlt className="me-2" />
+              네이버 지도로 약도 보기
+            </a>
+          </div>
         </section>
 
         <div className="text-center my-5">

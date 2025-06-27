@@ -75,6 +75,24 @@ main p, .accordion-body {
   color: #ffffff;
 }
 
+.map-link-btn {
+  display: inline-block;
+  background-color: #00C73C; /* Naver Green */
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.map-link-btn:hover {
+  background-color: #00A32E;
+  color: #ffffff;
+}
+
 .section-divider {
   border-bottom: 1px solid #ddd;
   margin: 3rem 0;
