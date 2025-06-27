@@ -13,6 +13,17 @@ function App() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleDownloadClick = () => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const appStoreUrl = "https://baeminconnect-bridge.onelink.me/iQ4g?af_js_web=true&af_ss_ver=2_7_2&pid=bridgepage_media&c=bridgepage_campaign&af_channel=bridgepage_channel&af_ad=bridgepage_ad&af_adset=bridgepage_adset&af_ss_ui=true&af_ss_qr=true";
+
+    if (isMobile) {
+      window.location.href = appStoreUrl;
+    } else {
+      handleShow();
+    }
+  };
+
   return (
     <div className="App">
       <header className="bg-mint text-center py-5">
@@ -84,7 +95,7 @@ function App() {
         </section>
 
         <div className="text-center my-5">
-          <Button className="baemin-download-btn" onClick={handleShow}>배민커넥트 앱 다운로드</Button>
+          <Button className="baemin-download-btn" onClick={handleDownloadClick}>배민커넥트 앱 다운로드</Button>
         </div>
 
         <div className="section-divider"></div>
