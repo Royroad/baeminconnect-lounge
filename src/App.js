@@ -31,7 +31,7 @@ function App() {
           <img src={logo} alt="배민커넥트 라운지 로고" className="header-logo" />
           <span className="lounge-text">라운지</span>
         </div>
-        <p className="header-slogan">라이더님들을 위한 편안한 휴식 공간</p>
+        <p className="header-slogan">라이더님을 위한 편안한 휴식 공간</p>
       </header>
 
       <Modal show={show} onHide={handleClose} centered>
