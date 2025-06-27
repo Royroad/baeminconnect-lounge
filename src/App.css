@@ -1,3 +1,7 @@
+.App {
+  overflow-x: hidden;
+}
+
 .bg-mint {
   background-color: white;
 }
