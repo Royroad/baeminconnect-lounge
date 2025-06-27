@@ -78,7 +78,7 @@ function App() {
           <div className="text-center mt-4">
             <a href="https://naver.me/xucXyVyE" target="_blank" rel="noopener noreferrer" className="map-link-btn">
               <FaMapMarkedAlt className="me-2" />
-              네이버 지도로 약도 보기
+              네이버 지도 보기
             </a>
           </div>
         </section>
