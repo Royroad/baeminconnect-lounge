@@ -41,7 +41,7 @@ function App() {
         <Modal.Body className="text-center">
           <p>아래 QR 코드를 스캔하여 앱을 다운로드하세요.</p>
           <img
-            src="%PUBLIC_URL%/baemin-qr.png"
+            src="/baemin-qr.png"
             alt="배민커넥트 앱 다운로드 QR Code"
             className="img-fluid"
           />
