@@ -15,7 +15,7 @@ function App() {
 
   const handleDownloadClick = () => {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const appStoreUrl = "https://baeminconnect-bridge.onelink.me/iQ4g?af_js_web=true&af_ss_ver=2_7_2&pid=bridgepage_media&c=bridgepage_campaign&af_channel=bridgepage_channel&af_ad=bridgepage_ad&af_adset=bridgepage_adset&af_ss_ui=true&af_ss_qr=true";
+    const appStoreUrl = "https://baeminconnect.onelink.me/k618/5engev5b";
 
     if (isMobile) {
       window.location.href = appStoreUrl;
@@ -41,11 +41,11 @@ function App() {
         <Modal.Body className="text-center">
           <p>아래 QR 코드를 스캔하여 앱을 다운로드하세요.</p>
           <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://baeminconnect-bridge.onelink.me/iQ4g?af_js_web=true&af_ss_ver=2_7_2&pid=bridgepage_media&c=bridgepage_campaign&af_channel=bridgepage_channel&af_ad=bridgepage_ad&af_adset=bridgepage_adset&af_ss_ui=true&af_ss_qr=true"
-            alt="QR Code"
+            src="%PUBLIC_URL%/baemin-qr.png"
+            alt="배민커넥트 앱 다운로드 QR Code"
             className="img-fluid"
           />
-          <p className="mt-3">또는 <a href="https://baeminconnect-bridge.onelink.me/iQ4g?af_js_web=true&af_ss_ver=2_7_2&pid=bridgepage_media&c=bridgepage_campaign&af_channel=bridgepage_channel&af_ad=bridgepage_ad&af_adset=bridgepage_adset&af_ss_ui=true&af_ss_qr=true" target="_blank" rel="noopener noreferrer">여기</a>를 클릭하세요.</p>
+          <p className="mt-3">또는 <a href="https://baeminconnect.onelink.me/k618/5engev5b" target="_blank" rel="noopener noreferrer">여기</a>를 클릭하세요.</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
