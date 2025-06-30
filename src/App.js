@@ -45,7 +45,6 @@ function App() {
             alt="배민커넥트 앱 다운로드 QR Code"
             className="img-fluid"
           />
-          <p className="mt-3">또는 <a href="https://baeminconnect.onelink.me/k618/5engev5b" target="_blank" rel="noopener noreferrer">여기</a>를 클릭하세요.</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
