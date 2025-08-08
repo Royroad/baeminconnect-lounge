@@ -54,7 +54,7 @@ header h1 {
 }
 
 .header-logo {
-  max-width: 400px;
+  max-width: 360px; /* 400px -> 10% 축소 */
   height: auto;
   object-fit: contain;
   object-position: center;
@@ -63,7 +63,7 @@ header h1 {
 }
 
 .header-title {
-  font-size: 2.2rem;
+  font-size: 2.4rem; /* 2.2rem -> 약 10% 확대 */
   font-weight: bold;
   color: #2c3e50;
   margin-bottom: 0.5rem;
@@ -238,7 +238,7 @@ main p, .accordion-body {
 }
 
 .banner-summary {
-  font-size: 0.95rem;
+  font-size: 1.05rem; /* 0.95rem -> 약 1~2pt 확대 */
   opacity: 0.9;
 }
 
@@ -433,15 +433,21 @@ main p, .accordion-body {
   margin-top: 15px;
 }
 
+/* 개선현황 섹션 타이틀(문제해결 사례 / 정책 및 서비스) 2pt 축소 */
+.problem-solving-section .section-title,
+.rider-feedback-section .section-title {
+  font-size: 1.65rem;
+}
+
+/* 제안 CTA 내부 텍스트 2pt 축소 */
+.suggestion-cta h4 { font-size: 1.1rem; }
+.suggestion-cta p { font-size: 0.95rem; }
+.suggestion-methods .btn { font-size: 0.95rem; padding: 10px 18px; }
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
-  .header-logo {
-    max-width: 300px;
-  }
-  
-  .header-title {
-    font-size: 1.8rem;
-  }
+  .header-logo { max-width: 270px; } /* 300px -> 10% 축소 */
+  .header-title { font-size: 2rem; } /* 1.8rem -> 약 10% 확대 */
   
   .lounge-text {
     font-size: 2rem;
@@ -494,13 +500,8 @@ main p, .accordion-body {
 }
 
 @media (max-width: 576px) {
-  .header-logo {
-    max-width: 250px;
-  }
-  
-  .header-title {
-    font-size: 1.5rem;
-  }
+  .header-logo { max-width: 225px; } /* 250px -> 10% 축소 */
+  .header-title { font-size: 1.65rem; } /* 1.5rem -> 10% 확대 */
 }
 
 /* 라이더 카드 스타일 */
