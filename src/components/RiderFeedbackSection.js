@@ -20,7 +20,7 @@ const RiderFeedbackSection = () => {
         setError(null);
         
         // 실제 데이터 조회 (Supabase 연결 시)
-        const data = await getCompletedImprovements(6);
+        const data = await getCompletedImprovements(10);
         
         // 데이터가 없으면 샘플 데이터 사용
         if (!data || data.length === 0) {
