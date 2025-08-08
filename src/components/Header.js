@@ -15,11 +15,11 @@ const Header = () => {
         <Container>
           <div className="text-center">
             <div className="header-logo-container mb-3">
-              <div className="logo-text">
-                <span className="logo-baemin">배민</span>
-                <span className="logo-icon">🛵</span>
-                <span className="logo-connect">커넥트</span>
-              </div>
+              <img 
+                src="/logo_basic.png" 
+                alt="배민커넥트 로고" 
+                className="header-logo"
+              />
             </div>
             <div>
               <h1 className="header-title mb-2">라운지</h1>
