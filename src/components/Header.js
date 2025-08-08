@@ -15,11 +15,16 @@ const Header = () => {
         <Container>
           <div className="text-center">
             <div className="header-logo-container mb-3">
-              <img 
-                src="/logo_cropped.png" 
-                alt="배민커넥트 로고" 
-                className="header-logo"
-              />
+              {(() => {
+                const LOGO_VERSION = '2';
+                return (
+                  <img
+                    src={`/logo_cropped.png?v=${LOGO_VERSION}`}
+                    alt="배민커넥트 로고"
+                    className="header-logo"
+                  />
+                );
+              })()}
             </div>
             <div>
               <h1 className="header-title mb-2">라운지</h1>
