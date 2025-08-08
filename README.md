@@ -1,70 +1,158 @@
-# Getting Started with Create React App
+# 🏢 배민커넥트 라운지 웹사이트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+라이더님들을 위한 편안한 휴식 공간, 배민커넥트 라운지의 공식 웹사이트입니다.
 
-## Available Scripts
+## ✨ **주요 기능**
 
-In the project directory, you can run:
+### 🏠 **라운지 소개**
+- 라운지 시설 및 편의사항 안내
+- 위치 및 운영시간 정보
+- 갤러리 및 FAQ
 
-### `npm start`
+### 💡 **라이더 제안함** (Supabase 연동)
+- **통계 대시보드**: 총 제안수, 완료수, 진행률 등
+- **개선 완료 아이템**: 라이더 제안으로 실제 개선된 사항들
+- **진행 중인 개선**: 현재 진행 중인 개선 사항과 진행률
+- **검토 중인 제안**: 새로 들어온 제안들
+- **기여자 랭킹**: 가장 많은 기여를 해주신 라이더분들
+- **제안하기**: 새로운 개선 제안 방법 안내
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ **기술 스택**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React 19, Bootstrap 5, React Router
+- **Backend**: Supabase (PostgreSQL)
+- **Styling**: CSS3, Bootstrap
+- **Icons**: React Icons
 
-### `npm test`
+## 🚀 **빠른 시작**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. 프로젝트 클론 및 설치
+```bash
+git clone <repository-url>
+cd baemin-lounge
+npm install
+```
 
-### `npm run build`
+### 2. 환경변수 설정
+프로젝트 루트에 `.env.local` 파일을 생성하고 Supabase 정보를 입력:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+REACT_APP_SUPABASE_URL=https://your-project-id.supabase.co
+REACT_APP_SUPABASE_ANON_KEY=your-anon-key-here
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. 개발 서버 실행
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+브라우저에서 [http://localhost:3000](http://localhost:3000) 접속
 
-### `npm run eject`
+## 🗃️ **Supabase 설정**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+라이더 제안함 기능을 사용하려면 Supabase 데이터베이스 설정이 필요합니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 빠른 설정
+1. [SUPABASE_SETUP_GUIDE.md](./SUPABASE_SETUP_GUIDE.md) 가이드 참고
+2. `database_setup.sql` 파일을 Supabase SQL Editor에서 실행
+3. 환경변수 설정 후 서버 재시작
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 데이터베이스 구조
+- **suggestions**: 라이더 제안 데이터
+- **improvements**: 완료된 개선 아이템
+- **progress_items**: 진행 중인 개선 사항
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 **프로젝트 구조**
 
-## Learn More
+```
+src/
+├── components/          # 재사용 가능한 컴포넌트
+│   ├── Header.js       # 헤더 네비게이션
+│   ├── Footer.js       # 푸터
+│   ├── Gallery.js      # 갤러리
+│   └── ImprovementBanner.js  # 개선사항 배너
+├── pages/              # 페이지 컴포넌트
+│   ├── MainPage.js     # 메인 페이지
+│   └── SuggestionsPage.js    # 라이더 제안함 페이지
+├── services/           # 데이터 서비스
+│   └── suggestionService.js  # Supabase 연동 로직
+├── config/             # 설정 파일
+│   └── supabase.js     # Supabase 클라이언트 설정
+├── images/             # 이미지 자원
+└── App.js              # 메인 앱 컴포넌트
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎨 **스타일링**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **메인 컬러**: 민트 (`#2AC1BC`)
+- **폰트**: Apple SD Gothic Neo, Malgun Gothic, Nanum Gothic
+- **반응형 디자인**: 모바일 최적화
+- **호버 효과**: 부드러운 애니메이션
 
-### Code Splitting
+## 📱 **주요 화면**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 메인 페이지
+- 라운지 소개 및 기본 정보
+- 개선사항 배너 (최근 완료된 개선 사항)
+- 편의시설, 위치, 갤러리, FAQ
 
-### Analyzing the Bundle Size
+### 라이더 제안함 페이지
+- 실시간 통계 대시보드
+- 개선 완료/진행중/검토중 아이템들
+- 기여자 랭킹 및 새로운 제안 안내
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔧 **개발 스크립트**
 
-### Making a Progressive Web App
+```bash
+# 개발 서버 실행
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 프로덕션 빌드
+npm run build
 
-### Advanced Configuration
+# 테스트 실행
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🌐 **배포**
 
-### Deployment
+### Vercel (추천)
+```bash
+npm run build
+# Vercel에 업로드 또는 Git 연동
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 기타 플랫폼
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
 
-### `npm run build` fails to minify
+## 📋 **TODO / 향후 계획**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] 실시간 알림 기능 (Supabase Realtime)
+- [ ] 관리자 대시보드 (제안 승인/거부)
+- [ ] 이메일 알림 (새 제안 시)
+- [ ] 파일 업로드 (Before/After 이미지)
+- [ ] PWA 지원 (오프라인 사용)
+
+## 🤝 **기여하기**
+
+1. Fork 프로젝트
+2. Feature 브랜치 생성 (`git checkout -b feature/amazing-feature`)
+3. 변경사항 커밋 (`git commit -m 'Add amazing feature'`)
+4. 브랜치에 Push (`git push origin feature/amazing-feature`)
+5. Pull Request 생성
+
+## 📄 **라이선스**
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
+
+## 📞 **문의**
+
+- **카카오톡**: @배민커넥트
+- **이메일**: contact@baemin.com
+- **주소**: 서울 송파구 백제고분로 364 대신빌딩 3층
+
+---
+
+**💚 라이더님들의 소중한 의견으로 만들어가는 더 나은 라운지!**

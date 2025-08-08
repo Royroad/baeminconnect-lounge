@@ -164,3 +164,616 @@ main p, .accordion-body {
   color: #333;
   margin: 0;
 }
+
+/* 헤더 네비게이션 스타일 */
+.custom-navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .navbar-nav {
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-link-custom {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333 !important;
+  padding: 15px 25px !important;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  margin: 0 10px;
+}
+
+.nav-link-custom:hover {
+  background-color: #f8f9fa;
+  color: #2AC1BC !important;
+}
+
+.nav-link-custom.active {
+  background-color: #2AC1BC;
+  color: white !important;
+}
+
+/* 개선사항 배너 스타일 */
+.improvement-banner {
+  background: linear-gradient(135deg, #2AC1BC 0%, #20B2AA 100%);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  margin-bottom: 2rem;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(42, 193, 188, 0.3);
+}
+
+.banner-icon {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.banner-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.banner-summary {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.banner-btn {
+  border: 2px solid white;
+  color: white;
+  font-weight: 600;
+}
+
+.banner-btn:hover {
+  background-color: white;
+  color: #2AC1BC;
+  border-color: white;
+}
+
+/* 라이더 제안함 페이지 스타일 */
+.section-subtitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 통계 카드 스타일 */
+.stats-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stats-icon {
+  color: #2AC1BC;
+}
+
+.stats-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 5px 0;
+}
+
+.stats-label {
+  color: #666;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 개선 완료 카드 스타일 */
+.improvement-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.improvement-card:hover {
+  transform: translateY(-5px);
+}
+
+.improvement-header {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+}
+
+.improvement-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+.proposer-name {
+  color: #2AC1BC;
+  font-weight: bold;
+}
+
+.improvement-effect {
+  margin-top: 15px;
+}
+
+/* 진행 중 카드 스타일 */
+.progress-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.progress-card:hover {
+  transform: translateY(-5px);
+}
+
+.progress-header {
+  background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+  color: white;
+  border: none;
+}
+
+/* 검토 중 카드 스타일 */
+.review-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.review-item {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #6c757d;
+  transition: background-color 0.3s ease;
+}
+
+.review-item:hover {
+  background-color: #e9ecef;
+}
+
+.review-title {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* 랭킹 카드 스타일 */
+.ranking-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #fff7e6 0%, #ffffff 100%);
+}
+
+.contributor-rank {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0;
+}
+
+.rank-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2AC1BC;
+  margin-bottom: 10px;
+}
+
+.contributor-name {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contribution-stats {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* 제안하기 CTA 스타일 */
+.suggestion-cta {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 2px dashed #2AC1BC;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.suggestion-methods .btn {
+  margin: 5px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.suggestion-methods .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer 개선 */
+.footer-suggestion-note {
+  border-top: 1px solid #495057;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .header-logo {
+    max-width: 500px;
+  }
+  
+  .lounge-text {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .stats-number {
+    font-size: 2rem;
+  }
+  
+  .banner-title {
+    font-size: 1rem;
+  }
+  
+  .banner-summary {
+    font-size: 0.9rem;
+  }
+  
+  .nav-link-custom {
+    font-size: 1rem;
+    padding: 10px 20px !important;
+    margin: 5px 0;
+    text-align: center;
+  }
+  
+  .custom-navbar .navbar-nav {
+    text-align: center;
+  }
+  
+  .improvement-banner {
+    padding: 15px;
+  }
+  
+  .suggestion-cta {
+    padding: 25px;
+  }
+  
+  .suggestion-methods .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* 라이더 카드 스타일 */
+.rider-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rider-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.rider-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rider-name {
+  font-weight: 600;
+  color: #2AC1BC;
+  font-size: 1.1rem;
+}
+
+.rider-date {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.rider-content {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* 라이더 목록 컨테이너 */
+.rider-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.rider-list-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.rider-list {
+  margin-bottom: 3rem;
+}
+
+/* 로딩 및 에러 상태 */
+.loading-container,
+.error-container,
+.empty-container {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.loading-spinner {
+  font-size: 1.2rem;
+  color: #2AC1BC;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: 600;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.empty-message {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* 마스킹 예시 섹션 */
+.masking-examples {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.masking-examples h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.masking-examples ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.masking-examples li {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2AC1BC;
+}
+
+/* 반응형 디자인 - 라이더 카드 */
+@media (max-width: 768px) {
+  .rider-card {
+    padding: 1rem;
+  }
+  
+  .rider-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .rider-name {
+    font-size: 1rem;
+  }
+  
+  .rider-content {
+    font-size: 0.95rem;
+  }
+  
+  .rider-list-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .rider-list-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* 문제해결 사례 섹션 스타일 */
+.problem-solving-section {
+  background-color: #fafbfc;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+/* 문제해결 사례 카드 메타데이터 영역 */
+.case-meta {
+  border-top: 1px solid #e9ecef !important;
+  padding-top: 12px !important;
+  margin-top: auto !important;
+}
+
+.case-meta .content-label {
+  font-size: 0.9rem !important;
+  font-weight: 500;
+}
+
+.case-info {
+  font-size: 0.85rem;
+}
+
+/* 확대된 항목명 스타일 */
+.content-label-large {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px;
+}
+
+/* 날짜와 라이더 ID 확대 스타일 */
+.case-info-top {
+  font-size: 1rem !important; /* 상담내용과 동일하게 확대 */
+}
+
+.case-meta .content-label {
+  font-size: 1rem !important; /* 상담내용과 동일하게 확대 */
+  font-weight: 600 !important;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.section-title {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.8rem; /* 기본 2rem에서 10% 감소 */
+}
+
+.title-icon {
+  font-size: 1.2em;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: center !important;
+}
+
+.section-description {
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: center !important;
+}
+
+.problem-solving-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+}
+
+.problem-solving-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+.case-header {
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 12px;
+}
+
+.rider-name {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+}
+
+.content-label {
+  color: #495057;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.problem-text, .solution-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  color: #495057;
+}
+
+.feedback-quote {
+  background-color: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 12px 16px;
+  margin: 0;
+  font-style: italic;
+  color: #495057;
+  border-radius: 0 8px 8px 0;
+}
+
+/* 라이더 피드백 섹션 스타일 */
+.rider-feedback-section {
+  background-color: #f8fafc;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.rider-feedback-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+}
+
+.rider-feedback-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+.feedback-header {
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 12px;
+}
+
+.quote-icon {
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.counseling-summary {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  background-color: #e3f2fd;
+  border-radius: 6px;
+  color: #1976d2;
+}
+
+.rider-feedback-card .feedback-quote {
+  background-color: #fff;
+  border-left: 4px solid #28a745;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
