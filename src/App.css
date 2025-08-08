@@ -50,15 +50,16 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* 간격 줄임 */
 }
 
 .header-logo {
   max-width: 400px;
   height: auto;
   object-fit: contain;
-  /* 여백 제거를 위한 설정 */
   object-position: center;
+  margin: 0; /* reset extra margins since asset is cropped */
+  display: block;
 }
 
 .header-title {

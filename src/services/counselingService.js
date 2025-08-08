@@ -64,6 +64,7 @@ export const getCompletedImprovements = async (limit = 6) => {
       .in('action_status', ['조치완료', '일부 조치완료']) // 조치상태 필터
       .not('rider_feedback', 'is', null) // 라이더 피드백이 있는 것만
       .not('rider_feedback', 'eq', '') // 빈 문자열 제외
+      .not('status_update_date', 'is', null) // 상태 업데이트일 필수
       .order('status_update_date', { ascending: false }) // 완료날짜 순으로 정렬
       .limit(limit);
 

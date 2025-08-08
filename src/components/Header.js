@@ -16,7 +16,7 @@ const Header = () => {
           <div className="text-center">
             <div className="header-logo-container mb-3">
               <img 
-                src="/logo_basic.png" 
+                src="/logo_cropped.png" 
                 alt="배민커넥트 로고" 
                 className="header-logo"
               />

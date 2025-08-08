@@ -18,25 +18,24 @@ const ImprovementBanner = () => {
   useEffect(() => {
     const fetchLatestImprovement = async () => {
       try {
-        // 개선 완료 아이템들을 가져옴
         const improvements = await getCompletedImprovements(10);
-        
         if (improvements && improvements.length > 0) {
-          // 일주일 내 개선된 아이템 찾기
           const oneWeekAgo = new Date();
           oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-          
-          const recentImprovements = improvements.filter(item => {
-            const updateDate = new Date(item.status_update_date || item.visit_date);
-            return updateDate >= oneWeekAgo;
+
+          // status_update_date가 존재하는 항목만 고려
+          const withUpdateDate = improvements.filter(item => !!item.status_update_date);
+
+          const recentImprovements = withUpdateDate.filter(item => {
+            const updateDate = new Date(item.status_update_date);
+            return !isNaN(updateDate) && updateDate >= oneWeekAgo;
           });
-          
-          // 일주일 내 아이템이 있으면 그 중 최신, 없으면 전체 중 최신
-          const selectedImprovement = recentImprovements.length > 0 
-            ? recentImprovements[0] 
-            : improvements[0];
-          
-          setLatestImprovement(selectedImprovement);
+
+          const selectedImprovement = recentImprovements.length > 0
+            ? recentImprovements[0]
+            : withUpdateDate[0];
+
+          setLatestImprovement(selectedImprovement || null);
         }
       } catch (error) {
         console.error('최근 개선 아이템 로딩 실패:', error);
