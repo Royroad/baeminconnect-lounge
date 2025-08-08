@@ -19,13 +19,13 @@ const RiderFeedbackSection = () => {
         setIsLoading(true);
         setError(null);
         
-        // 실제 데이터 조회 (Supabase 연결 시)
-        const data = await getCompletedImprovements(10);
+        // 실제 데이터 조회 (Supabase 연결 시) - 최신순 최대 6건
+        const data = await getCompletedImprovements(6);
         
         // 데이터가 없으면 샘플 데이터 사용
         if (!data || data.length === 0) {
           const sampleData = getSampleCompletedImprovements();
-          setImprovements(sampleData);
+          setImprovements(sampleData.slice(0, 6));
         } else {
           setImprovements(data);
         }
@@ -35,7 +35,7 @@ const RiderFeedbackSection = () => {
         
         // 오류 발생 시 샘플 데이터 사용
         const sampleData = getSampleCompletedImprovements();
-        setImprovements(sampleData);
+        setImprovements(sampleData.slice(0, 6));
       } finally {
         setIsLoading(false);
       }

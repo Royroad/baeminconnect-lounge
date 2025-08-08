@@ -19,13 +19,13 @@ const ProblemSolvingSection = () => {
         setIsLoading(true);
         setError(null);
         
-        // 실제 데이터 조회 (Supabase 연결 시)
-        const data = await getProblemSolvingCases(10);
+        // 실제 데이터 조회 (Supabase 연결 시) - 최신순 최대 12건
+        const data = await getProblemSolvingCases(12);
         
         // 데이터가 없으면 샘플 데이터 사용
         if (!data || data.length === 0) {
           const sampleData = getSampleProblemSolvingCases();
-          setCases(sampleData);
+          setCases(sampleData.slice(0, 12));
         } else {
           setCases(data);
         }
@@ -35,7 +35,7 @@ const ProblemSolvingSection = () => {
         
         // 오류 발생 시 샘플 데이터 사용
         const sampleData = getSampleProblemSolvingCases();
-        setCases(sampleData);
+        setCases(sampleData.slice(0, 12));
       } finally {
         setIsLoading(false);
       }

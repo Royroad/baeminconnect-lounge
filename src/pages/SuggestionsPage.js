@@ -18,11 +18,11 @@ const SuggestionsPage = () => {
         <p className="text-muted fs-5">라이더님들의 소중한 의견이 실제 서비스 개선으로 이어지고 있습니다</p>
       </div>
 
+      {/* 라이더 피드백 섹션 (정책/서비스 개선 사례) - 먼저 노출 */}
+      <RiderFeedbackSection />
+
       {/* 문제해결 사례 섹션 */}
       <ProblemSolvingSection />
-
-      {/* 라이더 피드백 섹션 */}
-      <RiderFeedbackSection />
 
       {/* 새로운 제안하기 */}
       <section className="text-center">
