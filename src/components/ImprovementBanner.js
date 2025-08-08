@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Alert, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaLightbulb, FaTimes, FaArrowRight } from 'react-icons/fa';
-import { getCompletedImprovementsForBanner } from '../services/counselingService';
+import { getCompletedImprovements, getProblemSolvingCases } from '../services/counselingService';
 import { formatRiderName } from '../utils/maskRiderId';
 
 /**
@@ -18,23 +18,37 @@ const ImprovementBanner = () => {
   useEffect(() => {
     const fetchLatestImprovement = async () => {
       try {
-        const improvements = await getCompletedImprovementsForBanner(20);
-        if (improvements && improvements.length > 0) {
-          const oneWeekAgo = new Date();
-          oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+        // 두 쿼리를 병렬로 수행하여 지연시간 최소화
+        const [improvements, problemSolving] = await Promise.all([
+          getCompletedImprovements(1), // rider_feedback 필수, status_update_date DESC
+          getProblemSolvingCases(1) // rider_feedback 필수, status_update_date DESC
+        ]);
 
-          const withUpdateDate = improvements.filter(item => !!item.status_update_date);
+        const oneWeekAgo = new Date();
+        oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
-          const recentImprovements = withUpdateDate.filter(item => {
-            const updateDate = new Date(item.status_update_date);
-            return !isNaN(updateDate) && updateDate >= oneWeekAgo;
-          });
+        const topImprovement = (improvements && improvements[0]) || null;
+        const topProblem = (problemSolving && problemSolving[0]) || null;
 
-          const selectedImprovement = recentImprovements.length > 0
-            ? recentImprovements[0]
-            : withUpdateDate[0];
+        // 선정 규칙
+        // 1) 개선(정책/서비스 개선)의 최상위 1건이 최근 7일 이내면 그 건 노출
+        if (topImprovement && topImprovement.status_update_date) {
+          const updateDate = new Date(topImprovement.status_update_date);
+          if (!isNaN(updateDate) && updateDate >= oneWeekAgo) {
+            setLatestImprovement(topImprovement);
+            setIsLoading(false);
+            return;
+          }
+        }
 
-          setLatestImprovement(selectedImprovement || null);
+        // 2) 아니면 문제해결의 최상위 1건 노출
+        if (topProblem) {
+          setLatestImprovement(topProblem);
+        } else if (topImprovement) {
+          // 예외: 문제해결이 없으면 개선 최상위 1건이라도 사용
+          setLatestImprovement(topImprovement);
+        } else {
+          setLatestImprovement(null);
         }
       } catch (error) {
         console.error('최근 개선 아이템 로딩 실패:', error);
@@ -52,16 +66,6 @@ const ImprovementBanner = () => {
 
   // 로딩 중이거나 데이터가 없거나 배너가 닫혀있으면 표시하지 않음
   if (!isVisible || isLoading || !latestImprovement) return null;
-
-  // 날짜 포맷팅 함수 (현재 미사용으로 주석 처리)
-  // const formatDate = (dateString) => {
-  //   const date = new Date(dateString);
-  //   return date.toLocaleDateString('ko-KR', {
-  //     year: 'numeric',
-  //     month: '2-digit',
-  //     day: '2-digit'
-  //   }).replace(/\./g, '.').replace(/\.$/, '');
-  // };
 
   return (
     <Alert className="improvement-banner d-flex align-items-center justify-content-between">
