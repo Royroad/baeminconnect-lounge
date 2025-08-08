@@ -81,6 +81,40 @@ export const getCompletedImprovements = async (limit = 6) => {
 };
 
 /**
+ * 배너용 개선 완료 아이템 조회
+ * 필터링 조건: 방문목적='정책/서비스 개선' AND 조치상태 IN ('조치완료', '일부 조치완료') AND 상태 업데이트일 존재
+ * @param {number} limit - 조회할 최대 개수  
+ * @returns {Promise<Array>} 배너용 개선 완료 아이템 목록
+ */
+export const getCompletedImprovementsForBanner = async (limit = 20) => {
+  try {
+    if (!supabase) {
+      console.error('❌ Supabase 클라이언트가 초기화되지 않았습니다');
+      return [];
+    }
+
+    const { data, error } = await supabase
+      .from('rider_voc_cases')
+      .select('*')
+      .eq('visit_purpose', '정책/서비스 개선')
+      .in('action_status', ['조치완료', '일부 조치완료'])
+      .not('status_update_date', 'is', null)
+      .order('status_update_date', { ascending: false })
+      .limit(limit);
+
+    if (error) {
+      console.error('❌ 배너용 개선 아이템 조회 오류:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('❌ 예상치 못한 오류:', err);
+    return [];
+  }
+};
+
+/**
  * VOC 통계 조회
  * @returns {Promise<Object>} VOC 통계 정보
  */

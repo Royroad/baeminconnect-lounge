@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Alert, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaLightbulb, FaTimes, FaArrowRight } from 'react-icons/fa';
-import { getCompletedImprovements } from '../services/counselingService';
+import { getCompletedImprovementsForBanner } from '../services/counselingService';
 import { formatRiderName } from '../utils/maskRiderId';
 
 /**
@@ -18,12 +18,11 @@ const ImprovementBanner = () => {
   useEffect(() => {
     const fetchLatestImprovement = async () => {
       try {
-        const improvements = await getCompletedImprovements(10);
+        const improvements = await getCompletedImprovementsForBanner(20);
         if (improvements && improvements.length > 0) {
           const oneWeekAgo = new Date();
           oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
-          // status_update_date가 존재하는 항목만 고려
           const withUpdateDate = improvements.filter(item => !!item.status_update_date);
 
           const recentImprovements = withUpdateDate.filter(item => {
