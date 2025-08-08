@@ -67,16 +67,23 @@ const ImprovementBanner = () => {
   // 로딩 중이거나 데이터가 없거나 배너가 닫혀있으면 표시하지 않음
   if (!isVisible || isLoading || !latestImprovement) return null;
 
+  const riderNameMasked = formatRiderName(latestImprovement.rider_id);
+  const actionContent = latestImprovement.action_content || latestImprovement.main_content || latestImprovement.counseling_content;
+  const isImprovement = latestImprovement.visit_purpose === '정책/서비스 개선';
+  const titleText = isImprovement
+    ? `🎉 ${riderNameMasked} 제안으로 정책 및 서비스가 개선되었습니다!`.replace('라이더님 라이더님', '라이더님')
+    : `✅ ${riderNameMasked}이 라운지를 방문하여 문제를 해결했어요!`;
+
   return (
     <Alert className="improvement-banner d-flex align-items-center justify-content-between">
       <div className="d-flex align-items-center">
         <FaLightbulb className="banner-icon me-3" />
         <div className="banner-content">
           <div className="banner-title">
-            🎉 <strong>{formatRiderName(latestImprovement.rider_id)}</strong> 제안으로 정책 및 서비스 개선이 완료되었습니다!
+            {titleText}
           </div>
           <div className="banner-summary">
-            {latestImprovement.action_content || latestImprovement.main_content || latestImprovement.counseling_content}
+            {actionContent}
           </div>
         </div>
       </div>
