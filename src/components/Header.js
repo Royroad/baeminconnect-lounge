@@ -14,14 +14,15 @@ const Header = () => {
       <div className="bg-light py-4">
         <Container>
           <div className="text-center">
-            <img 
-              src="/logo_basic.png" 
-              alt="배민커넥트 로고" 
-              className="header-logo mb-1"
-              style={{ height: '160px' }}
-            />
+            <div className="header-logo-container mb-3">
+              <div className="logo-text">
+                <span className="logo-baemin">배민</span>
+                <span className="logo-icon">🛵</span>
+                <span className="logo-connect">커넥트</span>
+              </div>
+            </div>
             <div>
-              <h1 className="header-title mb-2" style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>라운지</h1>
+              <h1 className="header-title mb-2">라운지</h1>
               <p className="header-subtitle mb-0 text-muted fs-5">
                 라이더님을 위한 편안한 휴식 공간
               </p>
@@ -35,7 +36,7 @@ const Header = () => {
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mx-auto">
+            <Nav className="me-auto">
               <Nav.Link 
                 as={Link} 
                 to="/" 
