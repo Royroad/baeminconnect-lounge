@@ -112,6 +112,9 @@ npm run build
 
 # 테스트 실행
 npm test
+
+# 통합 VOC 동기화 실행 (구글 시트 → Supabase)
+npm run sync:voc
 ```
 
 ## 🌐 **배포**
@@ -126,6 +129,18 @@ npm run build
 - Netlify
 - GitHub Pages
 - AWS S3 + CloudFront
+
+## 🤖 자동 동기화 (GitHub Actions)
+
+`.github/workflows/sync-voc.yml`가 매일 새벽 4시(KST, UTC 19:00)에 자동 실행되며, GitHub Actions 탭에서 수동 실행도 가능합니다.
+
+GitHub 리포지토리 Settings → Secrets and variables → Actions 에 아래 시크릿을 등록하세요:
+
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `GOOGLE_SHEET_ID`
+- `GOOGLE_CLIENT_EMAIL`
+- `GOOGLE_PRIVATE_KEY` (개행은 `\n`으로 이스케이프)
 
 ## 📋 **TODO / 향후 계획**
 
