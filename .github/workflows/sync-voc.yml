@@ -39,7 +39,7 @@ jobs:
         run: node scripts/test-sync.js
         env:
           # Supabase
-          REACT_APP_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           # Google Sheets
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
@@ -50,7 +50,7 @@ jobs:
         run: node scripts/unified-voc-sync.js
         env:
           # Supabase
-          REACT_APP_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           # Google Sheets
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
