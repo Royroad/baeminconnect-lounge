@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "backupDate": "2025-10-21T12:58:50.778Z",
+    "version": "1.0.0",
+    "projectUrl": "https://lkylcfbqilhwvujxjmlu.supabase.co",
+    "tables": 7,
+    "totalRows": 0
+  },
+  "tables": {
+    "rider_voc_cases": {
+      "tableName": "rider_voc_cases",
+      "error": "TypeError: Cannot convert argument to a ByteString because the character at index 0 has a value of 50668 which is greater than 255.",
+      "data": []
+    },
+    "boss_raids": {
+      "tableName": "boss_raids",
+      "error": "TypeError: Cannot convert argument to a ByteString because the character at index 0 has a value of 50668 which is greater than 255.",
+      "data": []
+    },
+    "raid_participants": {
+      "tableName": "raid_participants",
+      "error": "TypeError: Cannot convert argument to a ByteString because the character at index 0 has a value of 50668 which is greater than 255.",
+      "data": []
+    },
+    "delivery_logs": {
+      "tableName": "delivery_logs",
+      "error": "TypeError: Cannot convert argument to a ByteString because the character at index 0 has a value of 50668 which is greater than 255.",
+      "data": []
+    },
+    "raid_damages": {
+      "tableName": "raid_damages",
+      "error": "TypeError: Cannot convert argument to a ByteString because the character at index 0 has a value of 50668 which is greater than 255.",
+      "data": []
+    },
+    "raid_rankings": {
+      "tableName": "raid_rankings",
+      "error": "TypeError: Cannot convert argument to a ByteString because the character at index 0 has a value of 50668 which is greater than 255.",
+      "data": []
+    },
+    "raid_rewards": {
+      "tableName": "raid_rewards",
+      "error": "TypeError: Cannot convert argument to a ByteString because the character at index 0 has a value of 50668 which is greater than 255.",
+      "data": []
+    }
+  }
+}

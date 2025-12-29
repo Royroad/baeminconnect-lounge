@@ -1,12 +1,10 @@
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 /**
- * 헤더 네비게이션 컴포넌트
- * 로고, 슬로건, 메인 네비게이션 포함
+ * 헤더 컴포넌트
+ * 로고, 슬로건 포함 (서비스 종료로 네비게이션 제거)
  */
 const Header = () => {
-  const location = useLocation();
 
   return (
     <header>
@@ -36,30 +34,7 @@ const Header = () => {
         </Container>
       </div>
 
-      {/* 네비게이션 메뉴 */}
-      <Navbar expand="lg" className="custom-navbar">
-        <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link 
-                as={Link} 
-                to="/" 
-                className={`nav-link-custom ${location.pathname === '/' ? 'active' : ''}`}
-              >
-                라운지 안내
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
-                to="/suggestions" 
-                className={`nav-link-custom ${location.pathname === '/suggestions' ? 'active' : ''}`}
-              >
-                서비스 개선 현황
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      {/* 네비게이션 메뉴 - 서비스 종료로 인해 제거 */}
     </header>
   );
 };

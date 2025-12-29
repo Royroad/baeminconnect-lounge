@@ -1,15 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import MainPage from './pages/MainPage';
-import SuggestionsPage from './pages/SuggestionsPage';
+import ShutdownPage from './pages/ShutdownPage';
 
 /**
  * 메인 App 컴포넌트
- * 라우팅을 설정하고 공통 레이아웃(헤더, 푸터)을 제공
+ * 서비스 종료로 인해 모든 라우트를 종료 안내 페이지로 리다이렉트
  */
 function App() {
   return (
@@ -18,10 +17,11 @@ function App() {
         {/* 공통 헤더 */}
         <Header />
 
-        {/* 라우팅 컨텐츠 */}
+        {/* 모든 라우트를 종료 페이지로 리다이렉트 */}
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/suggestions" element={<SuggestionsPage />} />
+          <Route path="/" element={<ShutdownPage />} />
+          <Route path="/suggestions" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
 
         {/* 공통 푸터 */}

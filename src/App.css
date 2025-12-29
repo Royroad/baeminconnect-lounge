@@ -810,3 +810,21 @@ main p, .accordion-body {
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
+/* 종료 페이지 스타일 */
+.shutdown-message {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .shutdown-message h1 {
+    font-size: 2rem !important;
+  }
+  
+  .shutdown-message .alert {
+    font-size: 1rem !important;
+    padding: 1.5rem !important;
+  }
+}

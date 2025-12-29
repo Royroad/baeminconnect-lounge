@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+# 서비스 종료로 인해 모든 크롤링 차단
 User-agent: *
-Disallow:
+Disallow: /
